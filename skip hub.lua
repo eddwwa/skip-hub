@@ -2,6 +2,14 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Skiphub", "Midnight")
 
+-- Game Place ID Validation
+local allowedPlaceId = 8657766101 -- The specific place ID for this script
+
+if game.PlaceId ~= allowedPlaceId then
+    warn("This script is not authorized for use in this game.")
+    return -- Exit the script if the game place ID doesn't match
+end
+
 -- Key System Variables
 local validKey = "2025!" -- The required key for every execution
 
@@ -128,6 +136,8 @@ end
 
 -- Key Check
 checkKey()
+
+-- The rest of the code remains unchanged...
 
 -- Isolated Sections and Keybinds
 local function setupJeffreyTab()
